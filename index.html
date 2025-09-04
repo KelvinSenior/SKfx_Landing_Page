@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKFX Trading - Stop Guessing. Start Trading.</title>
+    <meta name="description" content="Get the free guide that reveals the 3-step strategy I use to find high-probability trades. Start your Forex trading journey today.">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>   
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'gradient': 'gradient 8s ease infinite', 
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .gradient-bg {
+            background: linear-gradient(-45deg, #0f172a, #1e293b, #0f172a, #1e3a8a);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+        }
+        
+        .glow:hover {
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.5);
+        }
+        
+        .text-glow {
+            text-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+        }
+        
+        .border-glow {
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+        
+        .border-glow:hover {
+            border-color: rgba(34, 197, 94, 0.6);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white font-inter">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-slate-900/90 backdrop-blur-sm z-50 border-b border-slate-700/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold text-green-400">
+                        <i class="fas fa-chart-line mr-2"></i>
+                        SKFX
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="text-gray-300 hover:text-green-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Home</a>
+                        <a href="#guide" class="text-gray-300 hover:text-green-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Guide</a>
+                        <a href="#broker" class="text-gray-300 hover:text-green-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Broker</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center gradient-bg relative overflow-hidden">
+        <!-- Animated background elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-20 w-72 h-72 bg-green-400/10 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-20 right-20 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl animate-float" style="animation-delay: -3s;"></div>
+            <div class="absolute top-1/2 left-1/3 w-48 h-48 bg-blue-400/10 rounded-full blur-3xl animate-float" style="animation-delay: -6s;"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-glow">
+                Stop Guessing. 
+                <span class="text-green-400">Start Trading.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+                Get the free guide that reveals the <span class="text-green-400 font-semibold">3-step strategy</span> I use to find high-probability trades.
+            </p>
+            
+            <!-- Email Form -->
+            <div id="guide" class="max-w-md mx-auto mb-8">
+                <form action="https://formspree.io/f/mrbaygvo" method="POST" class="space-y-4" id="emailForm">
+                    <div class="relative">
+                        <input 
+                            type="email" 
+                            name="email" 
+                            placeholder="Enter your email address" 
+                            required
+                            class="w-full px-6 py-4 bg-slate-800/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-green-400 focus:ring-2 focus:ring-green-400/20 transition-all duration-200"
+                        >
+                        <button 
+                            type="submit" 
+                            class="absolute right-2 top-2 px-6 py-2 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-md transition-all duration-200 glow hover:glow"
+                        >
+                            Get Free Guide NOW
+                        </button>
+                    </div>
+                    <p class="text-sm text-gray-400">
+                        We respect your privacy. Unsubscribe at any time.
+                    </p>
+                </form>
+            </div>
+            
+            <!-- Social Proof -->
+            <div class="text-center">
+                <p class="text-gray-400 mb-2">Featured in:</p>
+                <div class="flex justify-center items-center space-x-6 text-gray-500">
+                    <span class="text-lg font-medium">YouTube</span>
+                    <span class="text-lg font-medium">Trader Community</span>
+                    <span class="text-lg font-medium">FX Forums</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="py-20 bg-slate-800/50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">
+                Join over <span class="text-green-400">10,000+</span> traders who receive our exclusive insights
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="text-center">
+                    <div class="text-4xl text-green-400 mb-4">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Active Community</h3>
+                    <p class="text-gray-400">Connect with fellow traders</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl text-green-400 mb-4">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Proven Strategies</h3>
+                    <p class="text-gray-400">Tested and refined methods</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl text-green-400 mb-4">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Success Stories</h3>
+                    <p class="text-gray-400">Real results from real traders</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="py-20 bg-slate-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">
+                What's Inside <span class="text-green-400">The Ultimate Forex Starter Guide</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-6 rounded-lg bg-slate-800/50 border border-slate-700 hover:border-glow transition-all duration-200">
+                    <div class="text-5xl text-green-400 mb-6">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">The 3-Step Strategy I Use Daily</h3>
+                    <p class="text-gray-400">A systematic approach to identifying high-probability trading opportunities</p>
+                </div>
+                <div class="text-center p-6 rounded-lg bg-slate-800/50 border border-slate-700 hover:border-glow transition-all duration-200">
+                    <div class="text-5xl text-green-400 mb-6">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Risk Management Checklist</h3>
+                    <p class="text-gray-400">Essential rules to protect your capital and maximize longevity</p>
+                </div>
+                <div class="text-center p-6 rounded-lg bg-slate-800/50 border border-slate-700 hover:border-glow transition-all duration-200">
+                    <div class="text-5xl text-green-400 mb-6">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">5 Common Pitfalls to Avoid</h3>
+                    <p class="text-gray-400">Learn from others' mistakes and accelerate your learning curve</p>
+                </div>
+                <div class="text-center p-6 rounded-lg bg-slate-800/50 border border-slate-700 hover:border-glow transition-all duration-200">
+                    <div class="text-5xl text-green-400 mb-6">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Mindset Guide for Consistency</h3>
+                    <p class="text-gray-400">Develop the mental framework for long-term trading success</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Broker CTA Section -->
+    <section id="broker" class="py-20 bg-slate-800/50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">
+                Ready to Start? Trade with a Broker I Trust
+            </h2>
+            <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                I've partnered with Exness to provide you with a reliable, regulated trading platform. 
+                Get access to competitive spreads, fast execution, and professional-grade tools.
+            </p>
+            
+            <!-- Disclaimer -->
+            <div class="bg-slate-700/50 p-6 rounded-lg mb-8 text-left">
+                <p class="text-sm text-gray-300 leading-relaxed">
+                    <strong class="text-yellow-400">Important Disclaimer:</strong> Trading forex/CFDs is high risk and not suitable for everyone. 
+                    You could lose more than your initial investment. This is not financial advice. 
+                    I have a commercial partnership with Exness and earn a fee if you sign up through my link. 
+                    This supports the creation of free content for our community.
+                </p>
+            </div>
+            
+            <a 
+                href="https://one.exnesstrack.org/a/fa3enwqxoh" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="inline-block px-12 py-6 bg-green-500 hover:bg-green-600 text-white text-xl font-bold rounded-lg transition-all duration-200 glow hover:glow transform hover:scale-105"
+            >
+                <i class="fas fa-external-link-alt mr-3"></i>
+                Open Your Exness Account
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 bg-slate-900 border-t border-slate-700">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Email Form -->
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-6 text-green-400">
+                        Missed the guide? Get it here.
+                    </h3>
+                    <form action="https://formspree.io/f/mrbaygvo" method="POST" class="space-y-4" id="footerEmailForm">
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <input 
+                                type="email" 
+                                name="email" 
+                                placeholder="Enter your email address" 
+                                required
+                                class="flex-1 px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-green-400 focus:ring-2 focus:ring-green-400/20 transition-all duration-200"
+                            >
+                            <button 
+                                type="submit" 
+                                class="px-8 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg transition-all duration-200 glow hover:glow"
+                            >
+                                Get Guide
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Social Links -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://youtube.com/@kelvinseniorsarfo8192?si=OE8fmaBSA-don_PJ" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition-colors duration-200">
+                            <i class="fab fa-youtube text-2xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sks_prime001?igsh=MWljc2gwNXNxbjNiYg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-pink-500 transition-colors duration-200">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@sks_prime?_t=ZM-8zQzQSnIBO9&_r=1" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-black transition-colors duration-200">
+                            <i class="fab fa-tiktok text-2xl"></i>
+                        </a>
+                        <a href="https://x.com/sks_prime?s=11" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-400 transition-colors duration-200">
+                            <i class="fab fa-x-twitter text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-gray-400 text-sm">
+                    <a href="disclaimer.html" class="hover:text-green-400 transition-colors duration-200">Disclaimer</a>
+                    <span class="mx-2">•</span>
+                    <a href="#" class="hover:text-green-400 transition-colors duration-200">Privacy Policy</a>
+                </div>
+                <div class="text-gray-400 text-sm mt-4 md:mt-0">
+                    © 2024 SKFX Trading. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Smooth Scrolling Script -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handling
+        document.getElementById('emailForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const email = formData.get('email');
+            
+            // Submit to Formspree
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Redirect to PDF guide (replace with your actual PDF URL)
+                    window.location.href = 'https://drive.google.com/file/d/1Rjlx9ybj5rADXmJ5R4IImzSMWATmmx7L/view?usp=drive_link';
+                } else {
+                    alert('Something went wrong. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Something went wrong. Please try again.');
+            });
+        });
+
+        // Footer form submission
+        document.getElementById('footerEmailForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Redirect to PDF guide (replace with your actual PDF URL)
+                    window.location.href = 'https://drive.google.com/file/d/1Rjlx9ybj5rADXmJ5R4IImzSMWATmmx7L/view?usp=drive_link';
+                } else {
+                    alert('Something went wrong. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Something went wrong. Please try again.');
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-slate-900/95');
+            } else {
+                nav.classList.remove('bg-slate-900/95');
+            }
+        });
+    </script>
+</body>
+</html>
